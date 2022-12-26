@@ -4,7 +4,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'nuxt-ranger-events',
+    title: 'Nuxt Ranger Events',
     htmlAttrs: {
       lang: 'en'
     },
