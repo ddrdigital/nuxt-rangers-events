@@ -1,5 +1,4 @@
 <template>
-  <h1>Ranger Events</h1>
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -55,7 +54,7 @@
                 <div class="col-12 col-md-4 thumbnail-container d-flex justify-content-center px-2">
                   <img v-if="item.image != null" class="img-thumbnail
                                                                img-fluid mt-4 m-md-2"
-                    v-bind:src=`https://www.cheshireeast.gov.uk/${item.image.asset.sys.uri}?width=225&height=150&fit=crop,center`
+                    v-bind:src="'https://www.cheshireeast.gov.uk/' + 'item.image.asset.sys.uri' + '?width=225&height=150&fit=crop,center'"
                     v-bind:alt="item.title" />
                 </div>
                 <div class="card-body col-12 col-md-8 text-center text-md-start ps-md-4 ps-xl-2">
@@ -99,7 +98,7 @@
                   <div class="col-12">
                     <img v-if="selectedItem.image != null" class="rounded
                        mx-auto d-block featured-img"
-                      v-bind:src=`https://www.cheshireeast.gov.uk/${selectedItem.image.asset.sys.uri}`
+                      v-bind:src="'https://www.cheshireeast.gov.uk/' + 'selectedItem.image.asset.sys.uri'"
                       v-bind:alt="selectedItem.title" />
                     <hr />
                   </div>
@@ -141,7 +140,7 @@
                     <div class="selected-item-details__map">
                       <div id="map" ref="mapDiv">
                         <a target="_blank"
-                          v-bind:href=`https://maps.google.com/maps?q=${selectedItem.mapLocation.lat},${selectedItem.mapLocation.lon}`
+                          v-bind:href="'https://maps.google.com/maps?q=' + 'selectedItem.mapLocation.lat' + ',' + 'selectedItem.mapLocation.lon'"
                           class="cec-button cec-button-forward" role="button" aria-pressed="true">Get Directions
                           <small>(opens new window)</small></a>
                       </div>
@@ -192,8 +191,7 @@
               <div class="category-options pt=5 mt-5">
                 <h3 class="mb-3">Or filter events by category</h3>
                 <div class="form-check" v-for="category in categories">
-                  <input class="form-check-input" type="checkbox" v-bind:id="category" v-bind:ref="category"
-                    v-model="categoriesChecked.includes(category)" v-on:change="setFilter(category)" />
+                  <input class="form-check-input" type="checkbox" v-bind:id="category" v-bind:ref="category" v-on:change="setFilter(category)" />
                   <label class="form-check-label" v-bind:for="category">{{ category }}</label>
                 </div>
               </div>
