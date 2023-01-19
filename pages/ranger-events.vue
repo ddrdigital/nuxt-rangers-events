@@ -145,17 +145,6 @@
                           class="cec-button cec-button-forward" role="button" aria-pressed="true">Get Directions
                           <small>(opens new window)</small></a>
                       </div>
-                      <div class="share">
-                        <div class="card">
-                          <p id="selectedEventUrlElem">
-                            {{ prependUrl(selectedItem.sys.slug) }}
-                          </p>
-                          <button v-on:click="getShareableLink(selectedItem)" type="button" aria-pressed="true"
-                            class="ranger-event-title-link-button cec-button">
-                            <small>Copy URL to clipboard</small>
-                          </button>
-                        </div>
-                      </div>
                     </div>
                   </div>
                   <div class="col-12">
