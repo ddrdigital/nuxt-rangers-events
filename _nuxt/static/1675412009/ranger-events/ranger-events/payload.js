@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/ranger-events/ranger-events", {data:[{}],fetch:{},mutations:void 0});
